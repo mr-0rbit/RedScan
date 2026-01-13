@@ -76,7 +76,8 @@ RedScan emphasizes **clean code, extensibility, CLI-driven execution, and profes
 ╚═╝  ╚═╝╚══════╝╚═════╝ ╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═══╝
         Offensive Reconnaissance Framework
 
-
+---
+---
 ## 📁 Project Structure
 
 ```bash
