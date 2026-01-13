@@ -75,9 +75,7 @@ RedScan emphasizes **clean code, extensibility, CLI-driven execution, and profes
 ██║  ██║███████╗██████╔╝███████║╚██████╗██║  ██║██║ ╚████║
 ╚═╝  ╚═╝╚══════╝╚═════╝ ╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═══╝
         Offensive Reconnaissance Framework
-
-
----
+```
 
 ---
 
@@ -85,7 +83,7 @@ RedScan emphasizes **clean code, extensibility, CLI-driven execution, and profes
 
 ```bash
 RedScan/
-├── redscan.py
+├── reconix.py
 ├── requirements.txt
 ├── README.md
 ├── modules/
@@ -121,12 +119,12 @@ pip3 install -r requirements.txt
 
 ### Basic Run
 ```bash
-python3 redscan.py example.com
+python3 reconix.py example.com
 ```
 
 ### Full Recon with Report
 ```bash
-python3 redscan.py example.com \
+python3 reconix.py example.com \
   --whois \
   --dns \
   --subdomains \
