@@ -57,7 +57,7 @@ RedScan follows real-world offensive security practices with a clean CLI interfa
 
 ```bash
 RedScan/
-├── reconix.py
+├── redscan.py
 ├── requirements.txt
 ├── README.md
 ├── modules/
@@ -93,12 +93,12 @@ pip3 install -r requirements.txt
 
 ### Basic Run
 ```bash
-python3 reconix.py example.com
+python3 redscan.py example.com
 ```
 
 ### Full Recon with Report
 ```bash
-python3 reconix.py example.com \
+python3 redscan.py example.com \
   --whois \
   --dns \
   --subdomains \
