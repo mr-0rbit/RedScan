@@ -171,8 +171,7 @@ The author is **not responsible for misuse** of this tool.
 
 ## 👨‍💻 Author
 
-**Muhammad Hamza Zahid**  
-Cybersecurity | Offensive Security  
+**Muhammad Hamza Zahid**   
 
 ---
 
