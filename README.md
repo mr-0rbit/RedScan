@@ -83,7 +83,7 @@ RedScan emphasizes **clean code, extensibility, CLI-driven execution, and profes
 
 ```bash
 RedScan/
-├── reconix.py
+├── redscan.py
 ├── requirements.txt
 ├── README.md
 ├── modules/
