@@ -119,12 +119,12 @@ pip3 install -r requirements.txt
 
 ### Basic Run
 ```bash
-python3 reconix.py example.com
+python3 redscan.py example.com
 ```
 
 ### Full Recon with Report
 ```bash
-python3 reconix.py example.com \
+python3 redscan.py example.com \
   --whois \
   --dns \
   --subdomains \
