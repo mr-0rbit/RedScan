@@ -1,0 +1,1 @@
+Here you found directories which contain scan results in both .html and .json
