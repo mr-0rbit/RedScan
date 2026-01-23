@@ -1,187 +1,210 @@
-# 🔴 RedScan — Offensive Reconnaissance Framework
+🔴 RedScan — Offensive Reconnaissance Framework
+<p align="center"> <img src="https://img.shields.io/badge/Domain-Offensive%20Security-red?style=for-the-badge"> <img src="https://img.shields.io/badge/Language-Python-blue?style=for-the-badge"> <img src="https://img.shields.io/badge/Architecture-Modular-success?style=for-the-badge"> <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge"> </p>
+📌 Overview
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Domain-Offensive%20Security-red?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Language-Python-blue?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Architecture-Modular-success?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge">
-</p>
+RedScan is a modular offensive reconnaissance framework designed to automate initial information gathering during penetration testing, red team engagements, and security assessments.
 
----
+The tool follows real-world reconnaissance methodology, clearly separating passive and active recon, while generating professional, human-readable and machine-readable reports.
 
-## 📌 Overview
+RedScan is suitable for:
 
-**RedScan** is a **lightweight, modular offensive reconnaissance framework** designed to automate **initial information gathering** during penetration testing and red team engagements.
+Penetration testers
 
-It is built with **real-world offensive security practices** in mind and is suitable for:
+Red teamers
 
-- Penetration testers
-- Red teamers
-- Cybersecurity students
-- Internship & academic projects
-- Bug bounty reconnaissance
-- Open-source security tooling portfolios
+Cybersecurity students
 
-RedScan emphasizes **clean code, extensibility, CLI-driven execution, and professional reporting**.
+Internship & academic projects
 
----
+Bug bounty reconnaissance
 
-## 🎯 Objectives
+Open-source security tooling portfolios
 
-- Automate **passive and active reconnaissance**
-- Provide a **modular & extensible architecture**
-- Generate **professional reports** for documentation and automation
-- Serve as a **foundation for advanced offensive security tooling**
+🎯 Objectives
 
----
+Automate domain & IP-based reconnaissance
 
-## ✨ Features
+Apply correct recon methodology (FQDN-aware DNS enumeration)
 
-### 🔍 Passive Reconnaissance
-- WHOIS lookup
-- DNS enumeration:
-  - A records
-  - MX records
-  - TXT records
-  - NS records
-- Subdomain enumeration using **crt.sh**
+Provide a clean, modular, extensible architecture
 
-### ⚡ Active Reconnaissance
-- Port scanning (Nmap wrapper)
-- IP address resolution
-- Clean separation of recon modules
+Generate professional HTML & JSON reports
 
-### 📊 Reporting
-- **HTML report** (human-readable, presentation-ready)
-- **JSON report** (machine-readable, automation-friendly)
-- Timestamped scans
-- Target-wise organized output
+Serve as a foundation for advanced offensive tooling
 
-### 🧩 Architecture
-- Modular design
-- Independent recon modules
-- CLI flags for feature control
-- Verbose logging support
+✨ Features
+🔍 Passive Reconnaissance
 
----
+WHOIS enumeration (domain ownership & registration data)
 
-## 🖥 Tool Banner
+DNS enumeration using authoritative FQDN:
 
-```text
+A (IPv4) records
+
+MX records (with mail server IP resolution)
+
+NS records
+
+Subdomain enumeration using Certificate Transparency (crt.sh)
+
+Subdomain IP resolution (only valid & resolvable hosts)
+
+⚡ Active Reconnaissance
+
+Port scanning (Nmap-based)
+
+Banner grabbing on identified open ports only
+
+Web technology detection:
+
+HTTP headers
+
+TLS certificate Common Name (CN)
+
+Reverse DNS (PTR) lookup for IP targets (contextual only)
+
+📊 Reporting
+
+HTML report
+
+Dark mode
+
+Non-technical friendly
+
+Presentation-ready
+
+JSON report
+
+Structured
+
+Automation-friendly
+
+Timestamped scans
+
+Target-wise report directories
+
+No report overwrites
+
+🧩 Architecture
+
+Fully modular design
+
+Independent recon modules
+
+CLI-driven execution
+
+Verbose logging support
+
+Easy extensibility for new modules
+
+🖥 Tool Banner
 ██████╗ ███████╗██████╗ ███████╗ ██████╗ █████╗ ███╗   ██╗
 ██╔══██╗██╔════╝██╔══██╗██╔════╝██╔════╝██╔══██╗████╗  ██║
 ██████╔╝█████╗  ██║  ██║███████╗██║     ███████║██╔██╗ ██║
 ██╔══██╗██╔══╝  ██║  ██║╚════██║██║     ██╔══██║██║╚██╗██║
 ██║  ██║███████╗██████╔╝███████║╚██████╗██║  ██║██║ ╚████║
 ╚═╝  ╚═╝╚══════╝╚═════╝ ╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═══╝
-        Offensive Reconnaissance Framework
-```
+          MODULAR • RECONNAISSANCE • FRAMEWORK
 
----
-
-## 📁 Project Structure
-
-```bash
+📁 Project Structure
 RedScan/
 ├── redscan.py
 ├── requirements.txt
 ├── README.md
 ├── modules/
-│   ├── whois_lookup.py
-│   ├── dns_enum.py
-│   ├── subdomain_enum.py
-│   └── port_scan.py
-├── utils/
+│   ├── whois_mod.py
+│   ├── dns_mod.py
+│   ├── subdomain_mod.py
+│   ├── portscan_mod.py
+│   ├── banner_mod.py
+│   └── techdetect_mod.py
+├── utilities/
 │   ├── logger.py
-│   └── helpers.py
-├── report/
-│   └── report_generator.py
-└── output/
-```
+│   └── report.py
+└── reports/
 
----
+⚙️ Installation
+Requirements
 
-## ⚙️ Installation
+Python 3.8+
 
-### Requirements
-- Python 3.8+
-- Nmap installed
-- Linux / Kali Linux recommended
+Nmap installed
 
-### Install Dependencies
-```bash
+Linux / Kali Linux recommended
+
+Install Dependencies
 pip3 install -r requirements.txt
-```
 
----
+🚀 Usage
+Full Recon (Default)
+python3 redscan.py -t example.com
 
-## 🚀 Usage
+Full Recon with Verbose Output
+python3 redscan.py -t example.com -v
 
-### Basic Run
-```bash
-python3 redscan.py example.com
-```
+Selective Module Execution
+python3 redscan.py -t example.com --dns --subdomains
 
-### Full Recon with Report
-```bash
-python3 redscan.py example.com \
-  --whois \
-  --dns \
-  --subdomains \
-  --ports \
-  --report \
-  -v
-```
+IP Target Recon (with FQDN inference)
+python3 redscan.py -t 142.250.202.238
 
-### Command-Line Options
+⚙️ Command-Line Flags
+Flag	Description
+-t, --target	Target domain or IP address
+-v	Enable verbose logging
+--whois	WHOIS enumeration
+--tech	Technology detection
+--ports	Port scanning
+--banners	Banner grabbing
+--dns	DNS enumeration (via authoritative FQDN)
+--subdomains	Subdomain enumeration
+--all	Run all modules
 
-| Option | Description |
-|------|------------|
-| `--whois` | WHOIS lookup |
-| `--dns` | DNS enumeration |
-| `--subdomains` | Subdomain enumeration |
-| `--ports` | Port scanning |
-| `--report` | Generate HTML & JSON reports |
-| `-v` | Verbose logging |
+Note:
+If no module flags are provided, RedScan runs full reconnaissance by default.
 
----
-
-## 📂 Output
-
-```bash
-output/
+📂 Output Structure
+reports/
 └── example.com/
-    ├── report.html
-    └── report.json
-```
+    ├── recon_20260123_223015.html
+    └── recon_latest.json
 
-- `report.html` → For documentation & presentation
-- `report.json` → For automation & further analysis
 
----
+HTML → Human-readable, non-technical friendly
 
-## 🛡️ Legal Disclaimer
+JSON → Automation & analysis friendly
 
-⚠️ **RedScan is intended for educational and authorized security testing only.**
+🧠 Recon Methodology Highlights
 
-You must have **explicit permission** before scanning any target.  
-The author is **not responsible for misuse** of this tool.
+DNS enumeration is always performed using an authoritative FQDN
 
----
+PTR (reverse DNS) results are informational only
 
-## 👨‍💻 Author
+DNS records are never enumerated blindly on PTR hostnames
 
-**TEAM DELTA**   
+MX records include mail server IP resolution
 
----
+Subdomains are filtered to resolvable, valid hosts only
 
-## ⭐ Support
+🛡️ Legal Disclaimer
+
+⚠️ RedScan is intended for educational and authorized security testing only.
+
+You must have explicit permission before scanning any target.
+The author(s) are not responsible for misuse of this tool.
+
+👨‍💻 Author
+
+TEAM DELTA
+
+⭐ Support
 
 If you find this project useful:
-- ⭐ Star the repository
-- 🍴 Fork it
-- 🧠 Learn and improve it
 
----
+⭐ Star the repository
 
-### 🔴 RedScan — Scan Smart. Scan Red.
+🍴 Fork it
+
+🧠 Learn and improve it
+
+🔴 RedScan — Scan Smart. Scan Red.
