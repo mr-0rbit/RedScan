@@ -1,0 +1,189 @@
+# 🔴 RedScan — Offensive Reconnaissance Framework
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Domain-Offensive%20Security-red?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Language-Python-blue?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Architecture-Modular-success?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge">
+</p>
+
+---
+
+## 📌 Overview
+
+**RedScan** is a **modular offensive reconnaissance framework** designed to automate **initial information gathering** during penetration testing, red team engagements, and security assessments.
+
+The tool follows **real-world reconnaissance methodology**, clearly separating **passive and active recon**, while generating **professional, human-readable and machine-readable reports**.
+
+RedScan is suitable for:
+
+- Penetration testers  
+- Red teamers  
+- Cybersecurity students  
+- Internship & academic projects  
+- Bug bounty reconnaissance  
+- Open-source security tooling portfolios  
+
+---
+
+## 🎯 Objectives
+
+- Automate **domain & IP-based reconnaissance**
+- Apply **correct recon methodology** (FQDN-aware DNS enumeration)
+- Provide a **clean, modular, extensible architecture**
+- Generate **professional HTML & JSON reports**
+- Serve as a **foundation for advanced offensive tooling**
+
+---
+
+## ✨ Features
+
+### 🔍 Passive Reconnaissance
+- WHOIS enumeration (domain ownership & registration data)
+- DNS enumeration using authoritative FQDN:
+  - A (IPv4) records
+  - MX records (with mail server IP resolution)
+  - NS records
+- Subdomain enumeration using Certificate Transparency (crt.sh)
+- Subdomain IP resolution (only valid & resolvable hosts)
+
+### ⚡ Active Reconnaissance
+- Port scanning (Nmap-based)
+- Banner grabbing on identified open ports
+- Web technology detection:
+  - HTTP headers
+  - TLS certificate Common Name (CN)
+- Reverse DNS (PTR) lookup for IP targets (contextual)
+
+### 📊 Reporting
+- HTML report (dark mode, non-technical friendly)
+- JSON report (automation-friendly)
+- Timestamped scans
+- Target-wise report directories
+- No report overwrites
+
+### 🧩 Architecture
+- Modular design
+- Independent recon modules
+- CLI-driven execution
+- Verbose logging support
+
+---
+
+## 🖥 Tool Banner
+
+```text
+██████╗ ███████╗██████╗ ███████╗ ██████╗ █████╗ ███╗   ██╗
+██╔══██╗██╔════╝██╔══██╗██╔════╝██╔════╝██╔══██╗████╗  ██║
+██████╔╝█████╗  ██║  ██║███████╗██║     ███████║██╔██╗ ██║
+██╔══██╗██╔══╝  ██║  ██║╚════██║██║     ██╔══██║██║╚██╗██║
+██║  ██║███████╗██████╔╝███████║╚██████╗██║  ██║██║ ╚████║
+╚═╝  ╚═╝╚══════╝╚═════╝ ╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═══╝
+          MODULAR • RECONNAISSANCE • FRAMEWORK
+```
+
+---
+
+## 📁 Project Structure
+
+```bash
+RedScan/
+├── redscan.py
+├── requirements.txt
+├── README.md
+├── modules/
+│   ├── whois_mod.py
+│   ├── dns_mod.py
+│   ├── subdomain_mod.py
+│   ├── portscan_mod.py
+│   ├── banner_mod.py
+│   └── techdetect_mod.py
+├── utilities/
+│   ├── logger.py
+│   └── report.py
+└── reports/
+```
+
+---
+
+## ⚙️ Installation
+
+### Requirements
+- Python 3.8+
+- Nmap installed
+- Linux / Kali Linux recommended
+
+### Install Dependencies
+```bash
+pip3 install -r requirements.txt
+```
+
+---
+
+## 🚀 Usage
+
+### Full Recon (Default)
+```bash
+python3 redscan.py -t example.com
+```
+
+### Full Recon with Verbose Output
+```bash
+python3 redscan.py -t example.com -v
+```
+
+### Selective Module Execution
+```bash
+python3 redscan.py -t example.com --dns --subdomains
+```
+
+### IP Target Recon (with FQDN inference)
+```bash
+python3 redscan.py -t 142.250.202.238
+```
+
+---
+
+## ⚙️ Command-Line Flags
+
+| Flag | Description |
+|----|----|
+| `-t`, `--target` | Target domain or IP address |
+| `-v` | Enable verbose logging |
+| `--whois` | WHOIS enumeration |
+| `--tech` | Technology detection |
+| `--ports` | Port scanning |
+| `--banners` | Banner grabbing |
+| `--dns` | DNS enumeration |
+| `--subdomains` | Subdomain enumeration |
+| `--all` | Run all modules |
+
+---
+
+## 📂 Output Structure
+
+```bash
+reports/
+└── example.com/
+    ├── recon_20260123_223015.html
+    └── recon_latest.json
+```
+
+---
+
+## 👨‍💻 Author
+
+**TEAM DELTA**
+
+---
+
+## ⭐ Support
+
+If you find this project useful:
+- ⭐ Star the repository  
+- 🍴 Fork it  
+- 🧠 Learn and improve it  
+
+---
+
+### 🔴 RedScan — Scan Smart. Scan Red.
